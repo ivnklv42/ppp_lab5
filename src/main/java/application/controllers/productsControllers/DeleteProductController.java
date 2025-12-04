@@ -22,6 +22,7 @@ public class DeleteProductController extends GeneralProductsController {
         Product product = ProductsDao.findByTitle(deleteTextField.getText());
         if (product != null) {
             ProductsDao.delete(product);
+            toPreviousMenu(event);
         } else {
             productNotFoundLabel.setVisible(true);
         }
